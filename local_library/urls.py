@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from catalog import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -27,6 +28,10 @@ from django.urls import include
 
 urlpatterns += [
     path('catalog/', include('catalog.urls')),
+]
+
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # Add URL maps to redirect the base URL to our application
@@ -41,3 +46,8 @@ from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+from .api import api
+
+urlpatterns += [
+    path("api/", api.urls),
+]
