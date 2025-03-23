@@ -45,9 +45,3 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-from .api import api
-
-urlpatterns += [
-    path("api/", api.urls),
-]
