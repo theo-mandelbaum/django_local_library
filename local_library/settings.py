@@ -20,14 +20,7 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from pathlib import Path
 import environ
-BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env()
-# Load environment variables
-env.read_env(str(BASE_DIR / ".env"))
 
-
-from pathlib import Path
-import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 # Load environment variables
